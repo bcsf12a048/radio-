@@ -1,0 +1,48 @@
+﻿@model pucitradio.Models.User
+@{
+    ViewBag.Title = "Login";
+ 
+}
+
+
+
+
+<div class="Strm">
+    <h2>Sign In</h2>
+    @using (Html.BeginForm("CheckLoged", "User", FormMethod.Post))
+    {
+        <form role="form">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group " >
+                        @Html.LabelFor(Model => Model.UserName)
+
+                        @Html.TextBoxFor(Medel => Model.UserName)
+                        @ViewBag.Username
+                    </div>
+                    <div class="form-group" >
+
+
+                        @Html.LabelFor(Model => Model.Pin)
+                        @Html.TextBoxFor(Model => Model.Pin)
+                        @ViewBag.Password
+
+                        <a href="@Url.Action("Forgot_password", "Mytemp")" title="Forgot password?" style=" color:black;margin-left:50px">Forgot password?</a>
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-default " />
+                </div>
+            </div>
+        </form>
+
+
+        <br>
+        <a href="@Url.Action("Sign_Up","Mytemp")" title="Sign Up" style="margin-left:300px; color:black">Sign Up</a>
+
+
+    }
+
+
+
+</div>
+
