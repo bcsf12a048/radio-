@@ -22,11 +22,16 @@
                 </div>
             
                 <ul class="nav navbar-nav navbar-right">
-                    <li> @Html.ActionLink("Home", "Index", "User"  )</li>
+                   
+                    <li><a href="/User/Index" id="b0"><span class="glyphicon glyphicon-music"></span> Home</a></li>
                     <li><a href="#" id="b1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="#"id="b2"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li> @Html.ActionLink("Complain", "Complain", "Mytemp")</li>
-                    <li> @Html.ActionLink("About Us", "Login", "Mytemp")</li>
+                    <li><a href="#" id="b2"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#" id="b3"><span class="glyphicon glyphicon-calendar"></span> Show Timing</a></li>
+                    <li><a href="#" id="b5">Complain</a></li>
+                    <li><a href="#" id="b6">Mobile App</a></li>
+                    <li><a href="#" id="b4"> Chat</a></li>
+                    <li><a href="#" id="b7"> About Us</a></li>
+                    
                    
                    
                 </ul>
@@ -56,9 +61,39 @@
 <script>
     $(document).ready(function () {
         $('#b2').click(function () {
-            $('#div1').load('@Url.Action("SignUp", "User")');
+            $('#div1').load('@Url.Action("SignUp","User")');
 
             });
             });
 
             </script>
+<script>
+    $(document).ready(function () {
+        $('#b5').click(function () {
+           
+            $('#div1').load('@Url.Action("Complains", "User")');
+
+        });
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('#b3').click(function () {
+
+            $('#div1').load('@Url.Action("ShowTiming", "User")');
+
+        });
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('#b7').click(function () {
+
+            $('#div1').load('@Url.Action("AboutUs", "User")');
+
+        });
+    });
+
+</script>

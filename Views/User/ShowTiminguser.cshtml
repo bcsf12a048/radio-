@@ -1,0 +1,39 @@
+﻿<div class="Strm" style="top:200px; bottom:0px ;height:100%;">
+    <h2>Show Timings</h2>
+    <table>
+        <tr>
+            <td> Id  </td>
+            <td> Rj Name  </td>
+            <td> Show Name  </td>
+            <td>Days</td>
+            <td>Timing</td>
+
+        </tr>
+
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td> @x.Id </td>
+                <td> @x.RjName  </td>
+                <td> @x.ShowName  </td>
+                <td> @x.Days  </td>
+                <td> @x.Timeing_  </td>
+                <td> <a href="/User/RjUpdate/@x.Id">Update</a></td>
+                <td> <a href="/User/RjDelete/@x.Id">Delete</a></td>
+            </tr>
+
+        }
+    </table>
+    <form action="/User/RjAdd" method="post">
+        <br />
+        Rj Name   <input name="t1" type="text">
+        <br />
+        Show Name  <input name="t2" type="text">
+        <br />
+        Days  <input name="t3" type="text">
+        <br />
+        Timings  <input name="t4" type="text">
+        <br />
+        <input type="submit" value="add">
+    </form>
+</div>
